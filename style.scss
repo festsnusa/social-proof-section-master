@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+$magenta: hsl(300, 43%, 22%);
+$pink: hsl(333, 80%, 67%);
+$magentaGray: hsl(303, 10%, 53%);
+$magentaLight: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+$fontSize: 0.938rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.component {
+  max-width: 23.438rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 6rem 1rem;
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__stars {
+    margin-bottom: 2rem;
+  }
+}
+
+.header {
+
+  text-align: center;
+
+  &__title {
+    color: $magenta;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+
+  &__subtitle {
+    font-size: $fontSize;
+    font-weight: 700;
+    color: $magentaGray;
+    line-height: 1.5rem;
+  }
+}
+
+.stars {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+
+  &__item {
+    background-color: $magentaLight;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  &__icon {
+    padding: 0.4rem;
+  }
+
+  &__text {
+    color: $magenta;
+    font-weight: 700;
+  }
+
+}
+
+.comment {
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__item {
+    padding: 2rem;
+    background-color: $magenta;
+    border-radius: 0.625rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__image {
+    border-radius: 50%;
+    width: 2.5rem;
+  }
+
+  &__text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  &__name {
+    color: $white;
+    font-weight: 500;
+  }
+
+  &__buyer {
+    color: $pink;
+  }
+
+  &__text {
+    color: $white;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 1440px) {
+  .component {
+    padding: 5rem;
+    max-width: 100%;
+    grid-template-areas: "header main" "footer footer";
+
+    &__header {
+      grid-area: header;
+      max-width: 25rem;
+    }
+
+    &__main {
+      grid-area: main;
+    }
+
+    &__footer {
+      grid-area: footer;
+    }
+
+    &__stars {
+      margin-left: 6rem;
+    }
+
+  }
+
+  .header {
+    text-align: left;
+  }
+
+  .stars {
+
+    &__item {
+      display: flex;
+      max-width: 26rem;
+      align-items: center;
+      gap: 1rem;
+
+      &:nth-child(2) {
+        margin-left: 4rem;
+      }
+
+      &:nth-child(3) {
+        margin-left: 8rem;
+      }
+    }
+  }
+
+  .comment {
+    flex-direction: row;
+    max-width: 68rem;
+    align-items: flex-start;
+    gap: 2rem;
+
+    &__item {
+
+      &:nth-child(2) {
+        margin-top: 2rem;
+      }
+
+      &:nth-child(3) {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+}
